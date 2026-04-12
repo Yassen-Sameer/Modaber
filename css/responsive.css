@@ -1,0 +1,209 @@
+/* ? Global Rules */
+@media (min-width: 768px){
+  :root {
+    --section-spaces: 0;
+  }
+
+  .container {
+    width: 100%;
+    height: 100%;
+  }
+
+  .main-header {
+    .title {
+      h1 {
+        font-size: 36px;
+      }
+
+      p {
+        font-size: 14px;
+      }
+    }
+  }
+
+  body {
+    display: grid;
+    grid-template-columns: 120px repeat(4, 1fr);
+    grid-template-areas:
+      "sidebar nav nav nav nav"
+      "sidebar balance-cards balance-cards balance-cards balance-cards"
+      "sidebar recent-activity recent-activity analysis analysis"
+      "sidebar table table table table"
+      "sidebar monthly-bills monthly-bills summary summary"
+      "sidebar overview overview credit-cards credit-cards";
+    gap: 20px;
+    padding: 30px;
+  }
+}
+
+@media (min-width: 1300px) {
+  body {
+    grid-template-columns: 300px repeat(3, 1fr);
+    grid-template-areas:
+      "sidebar nav nav nav "
+      "sidebar balance-cards balance-cards balance-cards"
+      "sidebar recent-activity table table"
+      "sidebar monthly-bills table table"
+      "sidebar overview analysis credit-cards"
+      "sidebar overview summary credit-cards";
+  }
+}
+/* **************************************************************************************************************************** */
+/* ? NAV  */
+@media (min-width: 640px) {
+  .nav {
+    .container {
+      flex-direction: row;
+      align-items: center;
+      gap: 10px;
+
+      .profile {
+        order: 5;
+        margin-inline-start: auto;
+        gap: 10px;
+
+        .profile-pic {
+          width: 150px;
+          gap: 20px;
+
+          .name {
+            display: inline-block;
+            p {
+              display: none;
+            }
+          }
+        }
+      }
+
+      .status {
+        width: 70px;
+        border-radius: 7px;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .nav {
+    .container {
+
+      padding: 30px 25px;
+
+      .profile {
+        .icons {
+          button {
+            width: 40px;
+            height: 40px;
+          }
+        }
+
+        .profile-pic {
+          .name {
+            p {
+              display: inline-block;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+/* **************************************************************************************************************************** */
+/* ? balance-cards */
+@media (min-width: 768px) {
+  .balance-cards .container .cards {
+    display: grid;
+    grid-template-columns: repeat(3 , 1fr);
+    gap: 10px;
+  }
+
+  .balance-cards .container .cards .card:not(:last-child) {
+    margin-bottom: 0;
+  }
+
+    .balance-cards .container .cards .card h2 {
+    font-size: 22px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .balance-cards .container .cards .card h2 {
+    font-size: 25px;
+  }
+}
+/* **************************************************************************************************************************** */
+/* ? .recent-transactions */
+@media (min-width: 1200px) {
+  .recent-transactions {
+    .container {
+      .scroll-area {
+        table {
+          tr {
+            th,
+            td {
+              padding: 18px 8px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+/* **************************************************************************************************************************** */
+/* ? sidebar  */
+@media (min-width: 768px) and (max-width: 1300px) {
+  .sidebar {
+    width: 120px;
+    display: block;
+
+    .container {
+      padding-bottom: 0;
+      .links {
+        ul {
+          li {
+            padding: 0;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-block: 10px;
+            border-radius: 12px;
+          }
+        }
+      }
+      .fast {
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        ul {
+          li {
+            display: block;
+            padding: 0;
+          }
+        }
+      }
+    }
+
+    .main-header {
+      h1,
+      p {
+        display: none;
+      }
+    }
+
+    span {
+      display: none;
+    }
+    .fast {
+      h3 {
+        display: none;
+      }
+    }
+  }
+}
+@media (min-width: 1300px) {
+  .sidebar {
+    display: block;
+  }
+}
